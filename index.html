@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Juego del Ahorcado</title>
+    <link rel="icon" href="./imagen/logo.svg">
+    <link rel="stylesheet" href="./css/juego.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+  </head>
+  <body>
+      <div class="main-container">
+            <img src="./imagen/logo.svg" id="logo">
+            <img src="./imagen/imegenPortada.png" id="imgPortada" style="visibility: visible;">
+            <h1 class="titulo">Juego del ahorcado</h1>
+            <textarea id="textAgregarPalabra" class="textAgregarPalabra"  placeholder="Ingrese el texto aquí... ejemp: palabra a descubrir , una pista de la palabra" style="visibility: hidden ;" rows="18" cols="80" upkey=""></textarea>
+            <textarea id="historialPalabras" onKeyUp="agregarPalabra();" class="historialPalabras" rows="14" cols="35" style="visibility: hidden ;"></textarea>
+            <h1 id="msg-final"></h1>
+            <h3 id="acierto"></h3>
+            <h3 id='intenros'style="visibility: hidden;">Intentos Restantes: <span id="intentos" style="visibility: hidden;"></span></h3>
+            <progress id="barraProgreso" max="100" style="visibility: hidden;"></progress>
+            <canvas id="fondo" style="visibility: hidden;"></canvas>
+            <canvas id="fondoMensaje" style="visibility: hidden;"></canvas>
+            <h2 id="palabra" class="palabra" ></h2>
+            <span id="hueco-pista"></span>
+            <button id="btnInicioJuego" class="boton" style="visibility: visible;">Iniciar Juego</button>
+            <button id="btnCrearPalabras" class="boton" style="visibility: visible;">Agregar Palabras</button>
+            <img src="./imagen/ganador.png" id="imgGanador" style="visibility: hidden;">
+            <img src="./imagen/perdio.png" id="imgPerdedor" style="visibility: hidden;">
+            <p id="texto-Ganador" class="textoEmogi" style="visibility:hidden;">Felicidades</p>
+            <p id="texto-Ganador2" class="textoEmogi" style="visibility:hidden;">Ganastes!</p>
+            <p id="texto-Perdedor" class="textoEmogi" style="visibility:hidden;">Gamer</p>
+            <p id="texto-Perdedor2" class="textoEmogi" style="visibility:hidden;">Over</p>
+            
+            <picture>
+                <img src="./imagen/pierna izquierda.svg" class="imagenJuego" id="pIzquierda" style="visibility:hidden;">
+                <img src="./imagen/pierna derecha.svg" class="imagenJuego" id="pDerecha" style="visibility:hidden;">
+                <img src="./imagen/brazo izquierdo.svg" class="imagenJuego" id="bIzquierdo" style="visibility:hidden;">
+                <img src="./imagen/brazo derecho.svg" class="imagenJuego" id="bDerecho" style="visibility:hidden;">
+                <img src="./imagen/cuerpo.svg" class="imagenJuego"id="cuerpo" style="visibility:hidden;">
+                <img src="./imagen/cabeza.svg" class="imagenJuego" id="cabeza" style="visibility: hidden;">
+                <img src="./imagen/soga.svg" class="imagenJuego" id="soga" style="visibility:hidden;">
+                <img src="./imagen/mastil completo.svg" class="imagenJuego" id="mastilCompleto" style="visibility:hidden;">
+                <img src="./imagen/mastil.svg" class="imagenJuego" id="mastil" style="visibility:hidden;">
+                <img src="./imagen/piso.svg" id="imgPiso" style="visibility: hidden;">
+
+            </picture>
+            
+            <div class="col">
+                <button onclick="inicio()" id="btnReset" class="boton" style="visibility: hidden;">Otra Palabra</button>
+                <button onclick="pista()" id="btnPista" class="boton" style="visibility: hidden;">Dame una pista!</button>
+                <button id="btnSalir" class="boton" style="visibility: hidden;">Desistir</button>
+                <button onclick="pista()" id="pista" class="boton" style="visibility: hidden;">Dame una Pista</button>
+                <button id="btnAgregar" class="boton" style="visibility: hidden;" >Agregar Palabra</button>
+                
+            </div>
+            
+            
+            <div class="flex-row">
+                <div class="col">
+                    <div class="flex-row" id="abcdario"></div>
+                </div>
+                <div class="col"></div>
+            </div>
+      </div>
+    <script src="./js/juego.js"></script>
+  </body>
+  <footer>
+      <p id="text-mensajePiePagina">Desarrollado por: Edwin Camacho. Todos los Derechos Reservados</p>
+      <a href="https://www.alura.com.br/escola-programacao" target="_blank" rel="nofollow"><img src="./imagen/alura-logo.svg" id="imgAlura" class="imgPiePagina"></a>
+      <p id="textoAlura">Aluara Latam</p>
+      <a href="https://www.oracle.com/br/education/oracle-next-education/" target="_blank" rel="nofollow"><img src="./imagen/oracle.png" id="imgOracle" class="imgPiePagina"></a>
+      <a href="https://www.linkedin.com/in/edwin-camacho-cordero/" target="_blank" rel="nofollow"><img src="./imagen/linkedin.png" id="imgLinkedin" class="imgPiePagina"></a>
+      <a href="https://github.com/caedwin" target="_blank" rel="nofollow"><img src="./imagen/github.png" id="imgGithub" class="imgPiePagina"></a>
+      <canvas id="piePagina"></canvas>
+  </footer>
+</html>
